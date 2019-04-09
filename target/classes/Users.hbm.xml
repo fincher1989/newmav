@@ -11,11 +11,11 @@
         </id>
 
         <property name="userName">
-            <column name="USER_NAME" sql-type="varchar(255)"/>
+            <column name="USER_NAME" sql-type="varchar(30)"/>
         </property>
 
         <property name="userPasw">
-            <column name="USER_PASW" sql-type="varchar(255)"/>
+            <column name="USER_PASW" sql-type="varchar(30)"/>
         </property>
 
     </class>
