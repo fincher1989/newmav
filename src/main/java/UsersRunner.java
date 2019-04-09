@@ -18,14 +18,32 @@ public class UsersRunner {
 
         UsersRunner usersRunner = new UsersRunner();
 
-        System.out.println("Добавление записей пользователя");
-
-        usersRunner.addUser(1,"Щеглов Александр", "alex123");
+        System.out.println("___________________________");
+        System.out.println("Добавление записей 3 записи");
+        usersRunner.addUser(1,"vanya", "vanya123");
         usersRunner.addUser(2,"vasya", "vasya123");
         usersRunner.addUser(3,"petya", "petya123");
-
-        System.out.println("-----------------------");
         usersRunner.listUsers();
+        System.out.println("___________________________");
+        System.out.println();
+
+        System.out.println("___________________________");
+        System.out.println("изменю запись 2");
+
+        usersRunner.updateUser(2," Вася", " Вася123");
+
+        usersRunner.listUsers();
+        System.out.println("___________________________");
+        System.out.println();
+
+        System.out.println("___________________________");
+        System.out.println("удалю первую запись");
+
+        usersRunner.removeUser(1);
+
+        usersRunner.listUsers();
+        System.out.println("___________________________");
+        System.out.println();
 
         sessionFactory.close();
     }
@@ -34,30 +52,26 @@ public class UsersRunner {
         Transaction transaction = null ;
         Session session = sessionFactory.openSession();
         transaction = session.beginTransaction();
-        TestTransac.testTransac("сохраняем user", session, transaction);
-
         User us = new User(id, userName, userPass);
         session.save(us);
         transaction.commit();
         session.close();
-
-        TestTransac.testTransac("сохранил user", session, transaction);
     }
 
     public void listUsers() {
         Session session = sessionFactory.openSession();
         Transaction transaction = null ;
         transaction = session.beginTransaction();
+        List users = session.createQuery("FROM User").list();
 
-        TestTransac.testTransac("вывод на экран", session, transaction);
-    //    List users = session.createQuery("FROM User ").list();
-    //    for (User user : users) {
-      //      System.out.println(user);
-     ///       System.out.println("---------------------");
-      //  }
+        System.out.println("-----------------------");
+        System.out.println("| id| name | password |");
+        for (int i = 0 ; i < users.size(); i++)
+            System.out.println(users.get(i));
+        System.out.println("-----------------------");
 
         session.close();
-        TestTransac.testTransac("вывел на экран", session, transaction);
+      //  TestTransac.testTransac("вывел на экран", session, transaction);
     }
 
     public  void updateUser(int userId, String userName, String userPasw) {
