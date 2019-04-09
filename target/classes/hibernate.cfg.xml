@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.url">
+            jdbc:h2:C:/finch/idea/newmav/DB\myDB
+        </property>
+
+        <property name="connection.driver_class">
+            org.h2.Driver
+        </property>
+
+        <property name="hibernate.connection.username">
+            user_root
+        </property>
+
+        <property name="hibernate.connection.password">
+            505505
+        </property>
+
+        <mapping resource="Users.hbm.xml"/>
+        <mapping class="Entity.User"/>
+
+    </session-factory>
+</hibernate-configuration>
