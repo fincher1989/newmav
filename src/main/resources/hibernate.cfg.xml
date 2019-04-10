@@ -25,7 +25,6 @@
             505505
         </property>
 
-        <mapping resource="Users.hbm.xml"/>
         <mapping class="Entity.User"/>
 
     </session-factory>
