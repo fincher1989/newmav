@@ -23,11 +23,7 @@ public class UserService {
         return session.createQuery("FROM User").list();
     }
 
-    public void printListUser(){
-        List users = listUsers();
-        for (int i=0; i < users.size(); i++)
-            System.out.println(users.get(i));
-    }
+
 
     public  void updateUser(int userId, String userName, String userPasw) {
         User user = session.get(User.class, userId);

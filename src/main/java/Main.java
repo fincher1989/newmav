@@ -5,6 +5,12 @@ import java.util.List;
 
 public class Main {
 
+    public static void printListUser(UserService userService){
+        List users = userService.listUsers();
+        for (int i=0; i < users.size(); i++)
+            System.out.println(users.get(i));
+    }
+
     public static void main(String[] args) {
         Session session = (new Configuration()).configure().buildSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
@@ -17,21 +23,21 @@ public class Main {
         userService.addUser(1,"vanya", "vanya123");
         userService.addUser(2,"vasya", "vasya123");
         userService.addUser(3,"petya", "petya123");
-        userService.printListUser();
+        printListUser(userService);
         System.out.println("___________________________");
         System.out.println();
 
         System.out.println("___________________________");
         System.out.println("изменю запись 2");
         userService.updateUser(2," Вася", " Вася123");
-        userService.printListUser();
+        printListUser(userService);
         System.out.println("___________________________");
         System.out.println();
 
         System.out.println("___________________________");
         System.out.println("удалю первую запись");
         userService.removeUser(1);
-        userService.printListUser();
+        printListUser(userService);
         System.out.println("___________________________");
         System.out.println();
 
@@ -39,7 +45,7 @@ public class Main {
         System.out.println("удалю все остальные");
         userService.removeUser(2);
         userService.removeUser(3);
-        userService.printListUser();
+        printListUser(userService);
         System.out.println("___________________________");
         System.out.println();
 

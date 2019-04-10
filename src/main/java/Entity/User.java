@@ -18,7 +18,6 @@ public class User {
     private String userPasw;
 
     public User(){
-
     }
 
     public User(int id, String userName, String userPasw) {
