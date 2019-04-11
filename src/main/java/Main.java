@@ -2,52 +2,48 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import java.util.List;
+import java.util.Scanner;
+
+import Entity.User;
 
 public class Main {
 
     public static void printListUser(UserService userService){
         List users = userService.listUsers();
-        for (int i=0; i < users.size(); i++)
+        System.out.println("___________user____________");
+        for (int i = 0; i < users.size(); i++)
             System.out.println(users.get(i));
+        System.out.println("_________end user__________");
     }
 
     public static void main(String[] args) {
+        List users;
+        Scanner scanner;
         Session session = (new Configuration()).configure().buildSessionFactory().openSession();
         Transaction transaction = session.beginTransaction();
-        List users ;
-
         UserService userService = new UserService(session);
 
-        System.out.println("___________________________");
-        System.out.println("Добавление записей 3 записи");
-        userService.addUser(1,"vanya", "vanya123");
-        userService.addUser(2,"vasya", "vasya123");
-        userService.addUser(3,"petya", "petya123");
+        userService.addUser("vanya", "vanya123");
+        userService.addUser("vasya", "vasya123");
+        userService.addUser("petya", "petya123");
         printListUser(userService);
-        System.out.println("___________________________");
-        System.out.println();
 
-        System.out.println("___________________________");
-        System.out.println("изменю запись 2");
-        userService.updateUser(2," Вася", " Вася123");
+        System.out.print("изменить:");
+        scanner = new Scanner(System.in);
+        userService.updateUser(scanner.nextLong()," Вася", " Вася123");
         printListUser(userService);
-        System.out.println("___________________________");
-        System.out.println();
 
-        System.out.println("___________________________");
-        System.out.println("удалю первую запись");
-        userService.removeUser(1);
+        System.out.print("удалить:");
+        scanner = new Scanner(System.in);
+        userService.removeUser(scanner.nextLong());
         printListUser(userService);
-        System.out.println("___________________________");
-        System.out.println();
 
-        System.out.println("___________________________");
         System.out.println("удалю все остальные");
-        userService.removeUser(2);
-        userService.removeUser(3);
+        users = userService.listUsers();
+        for (long k = 0; k < users.size(); k++)
+            userService.removeUser(k);
         printListUser(userService);
-        System.out.println("___________________________");
-        System.out.println();
+
 
         transaction.commit();
         session.close();
