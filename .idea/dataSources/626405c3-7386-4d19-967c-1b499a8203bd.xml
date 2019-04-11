@@ -80,9 +80,31 @@
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="22" parent="8" name="UR_PK">
+    <index id="22" parent="8" name="USER_ROLES_USERS_ID_FK_INDEX_C">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>USER_ID</ColNames>
+    </index>
+    <index id="23" parent="8" name="USER_ROLES_ROLE_ID_FK_INDEX_C">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ROLE_ID</ColNames>
+    </index>
+    <key id="24" parent="8" name="UR_PK">
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="25" parent="8" name="USER_ROLES_USERS_ID_FK">
+      <ColNames>USER_ID</ColNames>
+      <RefSchemaName>USERS_DB</RefSchemaName>
+      <RefTableName>USERS</RefTableName>
+      <RefKeyName>USERS_PK</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="26" parent="8" name="USER_ROLES_ROLE_ID_FK">
+      <ColNames>ROLE_ID</ColNames>
+      <RefSchemaName>USERS_DB</RefSchemaName>
+      <RefTableName>ROLE</RefTableName>
+      <RefKeyName>ROLE_PK</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

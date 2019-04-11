@@ -20,7 +20,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "USER_NAME", nullable = false, length = 255)
+    @Column(name = "USER_NAME", nullable = false, length = 30)
     private String userName;
     public String getUserName() {
         return userName;
@@ -30,7 +30,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "USER_PASW", nullable = false, length = 255)
+    @Column(name = "USER_PASW", nullable = false, length = 30)
     private String userPasw;
     public String getUserPasw() {
         return userPasw;
