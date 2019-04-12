@@ -2,6 +2,7 @@ package Entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,6 +20,9 @@ public class Role {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @ManyToMany
+    private List<User> Users;
 
     @Basic
     @Column(name = "ROLE_NAME", nullable = false, length = 30)

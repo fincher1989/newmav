@@ -2,6 +2,7 @@ package Entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,6 +20,9 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
+
+    @ManyToMany
+    private List<Role> Roles;
 
     @Basic
     @Column(name = "USER_NAME", nullable = false, length = 30)
@@ -40,11 +44,15 @@ public class User {
         this.userPasw = userPasw;
     }
 
+    /*
+
     private Set<Role> roles = new HashSet();
     @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
+
+
     public Set<Role> getRoles () {
         return roles;
     }
@@ -55,6 +63,8 @@ public class User {
     public void addRole(Role role) {
         roles.add(role);
     }
+
+    */
 
     public User(){
     }
