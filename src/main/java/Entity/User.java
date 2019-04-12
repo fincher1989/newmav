@@ -41,7 +41,7 @@ public class User {
     }
 
     private Set<Role> roles = new HashSet();
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -51,6 +51,7 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
     public void addRole(Role role) {
         roles.add(role);
     }

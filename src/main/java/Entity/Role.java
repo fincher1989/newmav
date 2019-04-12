@@ -4,16 +4,13 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-// 3.2.3
 @Entity
 @Table(name = "ROLE", schema = "USERS_DB", catalog = "MYDB")
 public class Role {
 
     @Id
     @GeneratedValue(generator = "USERS_DB.ROLE_ID")
-    @org.hibernate.annotations.GenericGenerator(
-            name = "USERS_DB.ROLE_ID",
-            strategy = "sequence")
+    @org.hibernate.annotations.GenericGenerator(name = "USERS_DB.ROLE_ID", strategy = "sequence")
     @Column(name = "ID", nullable = false)
     private long id;
     public long getId() {
@@ -33,17 +30,24 @@ public class Role {
         this.roleName = roleName;
     }
 
+
+
+
+
+
+
     private Set<User> users = new HashSet();
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     @JoinTable(name = "user_roles",
-            joinColumns = @JoinColumn(name = "rile_id"),
+            joinColumns = @JoinColumn(name = "role_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
-    public Set<User> getUser() {
+    public Set<User> getUsers() {
         return users;
     }
-    public void setUser(Set<User> roles) {
+    public void setUsers(Set<User> users) {
         this.users = users;
     }
+
     public void addUser(User user) {
         users.add(user);
     }
