@@ -1,2 +1,5 @@
+Entity\User_Roles.class
+Main.class
+UserService.class
+Entity\Role.class
 Entity\User.class
-UsersRunner.class

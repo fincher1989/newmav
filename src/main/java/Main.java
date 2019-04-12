@@ -4,6 +4,7 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 import java.util.Scanner;
 
+
 import Entity.User;
 
 public class Main {
