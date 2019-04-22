@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6ca984f-1c91-469a-b117-7993cd7ad05a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/626405c3-7386-4d19-967c-1b499a8203bd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/626405c3-7386-4d19-967c-1b499a8203bd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/myDB.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/myDB.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/myDB.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/myDB.trace.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/scripts/create_users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DB/scripts/create_users.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/UserRoles.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,8 +75,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="170">
+              <caret line="10" selection-start-line="10" selection-end-line="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/RoleService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="59">
+              <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -103,29 +106,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/newmav.iml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DB/scripts/create_users.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="uml://DATABASE/626405c3-7386-4d19-967c-1b499a8203bd.SCHEMA:MYDB.USERS_DB">
+        <entry file="uml://DATABASE/626405c3-7386-4d19-967c-1b499a8203bd">
           <provider selected="true" editor-type-id="UmlEditorProvider">
             <state>
               <ID>DATABASE</ID>
-              <OriginalElement>626405c3-7386-4d19-967c-1b499a8203bd.SCHEMA:MYDB.USERS_DB</OriginalElement>
+              <OriginalElement>626405c3-7386-4d19-967c-1b499a8203bd</OriginalElement>
               <nodes>
                 <node x="122.75" y="146.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USER_ROLES</node>
-                <node x="203.0" y="0.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USERS</node>
-                <node x="0.0" y="11.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.ROLE</node>
+                <node x="262.0" y="-96.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USERS</node>
+                <node x="-171.0" y="-121.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.ROLE</node>
               </nodes>
               <notes />
               <edges>
@@ -142,9 +131,9 @@
                   <point x="0.0" y="37.0" />
                 </edge>
               </edges>
-              <settings layout="Hierarchic Group" zoom="1.0" x="-123.5" y="77.0" />
+              <settings layout="Hierarchic Group" zoom="1.0" x="-123.5" y="-86.5" />
               <SelectedNodes>
-                <node>626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.ROLE</node>
+                <node>626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USERS</node>
               </SelectedNodes>
               <Categories>
                 <Category>Key columns</Category>
@@ -155,56 +144,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Entity/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Role.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="646">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#1106#1107#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Entity/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="711">
+              <caret line="55" selection-start-line="55" selection-end-line="58" selection-end-column="5" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -243,15 +202,16 @@
         <option value="$PROJECT_DIR$/src/main/java/Entity/User" />
         <option value="$PROJECT_DIR$/src/main/resources/Users.hbm.xml" />
         <option value="$PROJECT_DIR$/src/main/java/UsersRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/User_Roles.java" />
         <option value="$PROJECT_DIR$/DB/scripts/create_users.sql" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/UserRoles.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Entity/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/Entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Entity/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/RoleService.java" />
       </list>
     </option>
   </component>
@@ -361,7 +321,7 @@
     <property name="JPA.DatabaseSchemaImportDialog" value="626405c3-7386-4d19-967c-1b499a8203bd" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555894221348" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555907948291" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -416,12 +376,12 @@
       <workItem from="1555050668408" duration="4870000" />
       <workItem from="1555887086598" duration="261000" />
       <workItem from="1555887372352" duration="43000" />
-      <workItem from="1555888125378" duration="5760000" />
+      <workItem from="1555888125378" duration="7365000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88168000" />
+    <option name="totallyTimeSpent" value="89773000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -433,12 +393,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49824563" visible="true" weight="0.15565032" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4977778" visible="true" weight="0.15565032" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" id="Persistence" order="2" sideWeight="0.5017544" side_tool="true" visible="true" weight="0.15565032" />
+      <window_info id="Persistence" order="2" sideWeight="0.50222224" side_tool="true" visible="true" weight="0.15565032" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -446,17 +406,17 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49626866" visible="true" weight="0.38244852" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49626866" visible="true" weight="0.7562297" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Console" order="7" sideWeight="0.4978678" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.44189766" weight="0.49945828" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.39019188" weight="0.49945828" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50373137" side_tool="true" weight="0.47128928" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.6892324" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.6098081" side_tool="true" weight="0.49945828" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.3107676" weight="0.32936078" />
       <window_info anchor="bottom" id="SQL Generator" order="15" sideWeight="0.4989339" weight="0.34236187" />
@@ -610,15 +570,6 @@
     <entry file="file://$PROJECT_DIR$/newmav.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://DATABASE/626405c3-7386-4d19-967c-1b499a8203bd.SCHEMA:MYDB.USERS_DB">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -679,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -696,30 +640,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserService.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/extensions/com.intellij.database/schema/Generate POJOs.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state>
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="uml://DATABASE/626405c3-7386-4d19-967c-1b499a8203bd">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>626405c3-7386-4d19-967c-1b499a8203bd</OriginalElement>
+          <nodes>
+            <node x="122.75" y="146.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USER_ROLES</node>
+            <node x="262.0" y="-96.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USERS</node>
+            <node x="-171.0" y="-121.0">626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.ROLE</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USER_ROLES" target="626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USERS">
+              <point x="35.25" y="-36.5" />
+              <point x="228.5" y="121.0" />
+              <point x="295.0" y="121.0" />
+              <point x="0.0" y="48.0" />
+            </edge>
+            <edge source="626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USER_ROLES" target="626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.ROLE">
+              <point x="-35.25" y="-36.5" />
+              <point x="158.0" y="121.0" />
+              <point x="91.5" y="121.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-123.5" y="-86.5" />
+          <SelectedNodes>
+            <node>626405c3-7386-4d19-967c-1b499a8203bd.TABLE:MYDB.USERS_DB.USERS</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        <state relative-caret-position="711">
+          <caret line="55" selection-start-line="55" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="38" lean-forward="true" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1106#1107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/RoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="25" column="59" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
