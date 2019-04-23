@@ -53,6 +53,8 @@ public class User {
     )
     private Set<Role> roles;
 
+    public User(){}
+
     public User(String userName, String userPass) {
         this.userName = userName ;
         this.userPasw = userPass ;

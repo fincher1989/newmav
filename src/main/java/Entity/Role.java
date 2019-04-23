@@ -31,7 +31,7 @@ public class Role {
 
     @Column(name = "ROLE_NAME", nullable = false, length = 30)
     private String roleName;
-    public String getroleName() {
+    public String getRoleName() {
         return roleName;
     }
     public void setRoleName(String roleName) {
@@ -40,6 +40,8 @@ public class Role {
 
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<User> users;
+
+    public Role (){}
 
     public Role(String roleName) {
         this.roleName = roleName ;

@@ -32,6 +32,15 @@ public class UserService {
         session.update(user);
     }
 
+    public void updateUser(User user) {
+        if (user != null) {
+            User user1 = session.get(User.class, user.getId());
+            user1.setUserName(user.getUserName());
+            user1.setUserPasw(user.getUserPasw());
+            session.update(user1);
+        }
+    }
+
     public  void removeUser(long userId){
         User user = session.get(User.class, userId);
         session.delete(user);
