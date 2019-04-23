@@ -18,7 +18,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         List users;
         Scanner scanner;
         Session session = (new Configuration()).configure().buildSessionFactory().openSession();

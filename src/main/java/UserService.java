@@ -36,7 +36,4 @@ public class UserService {
         User user = session.get(User.class, userId);
         session.delete(user);
     }
-
-
-
 }
