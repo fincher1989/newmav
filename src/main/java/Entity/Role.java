@@ -21,11 +21,11 @@ public class Role {
     @GeneratedValue(generator = "USERS_DB.ROLE_ID")
     @org.hibernate.annotations.GenericGenerator(name = "USERS_DB.ROLE_ID", strategy = "sequence")
     @Column(name = "ID", nullable = false)
-    private long id;
-    public long getId() {
+    private int id;
+    public int getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -40,6 +40,15 @@ public class Role {
 
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<User> users;
+    public Set<User> getUsers(){
+        return users;
+    }
+    public void setUsers (Set<User> users){
+        this.users = users;
+    }
+    public void addUser (User user){
+        users.add(user);
+    }
 
     public Role (){}
 
@@ -47,5 +56,23 @@ public class Role {
         this.roleName = roleName ;
     }
 
+    @Override
+    public int hashCode() {
+        int result = id ;
+        result = 31 * result + (roleName != null ? roleName.hashCode() : 0);
+        return result ;
+    }
 
+    @Override
+    public boolean equals (Object other){
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        if (!(other instanceof Role)) return false;
+
+        final Role role = (Role) other ;
+        if (id != role.id) return false;
+        if (roleName != null ? !roleName.equals(role.roleName) : role.roleName != null) return false;
+
+        return true;
+    }
 }

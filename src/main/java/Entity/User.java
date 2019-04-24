@@ -20,11 +20,11 @@ public class User {
     @GeneratedValue(generator = "USERS_DB.USER_ID")
     @org.hibernate.annotations.GenericGenerator(name = "USERS_DB.USER_ID", strategy = "sequence")
     @Column(name = "ID", nullable = false)
-    private long id;
-    public long getId() {
+    private int id;
+    public int getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -52,6 +52,15 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "ROLE_ID", referencedColumnName = "ID")
     )
     private Set<Role> roles;
+    public Set<Role> getRoles(){
+        return roles;
+    }
+    public void setRoles (Set<Role> roles){
+        this.roles = roles;
+    }
+    public void addRole (Role role){
+        roles.add(role);
+    }
 
     public User(){}
 
@@ -59,4 +68,27 @@ public class User {
         this.userName = userName ;
         this.userPasw = userPass ;
     }
+
+    @Override
+    public int hashCode() {
+        int result = id ;
+        result = 31 * result + (userName != null ? userName.hashCode() : 0);
+        result = 31 * result + (userPasw != null ? userPasw.hashCode() : 0);
+        return result ;
+    }
+
+    @Override
+    public boolean equals (Object other){
+        if (this == other) return true;
+        if (other == null || getClass() != other.getClass()) return false;
+        if (!(other instanceof User)) return false;
+
+        final User user = (User) other ;
+        if (id != user.id) return false;
+        if (userName != null ? !userName.equals(user.userName) : user.userName != null) return false;
+        if (userPasw != null ? !userPasw.equals(user.userPasw) : user.userPasw != null) return false;
+
+        return true;
+    }
+
 }

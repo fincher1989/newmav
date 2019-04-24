@@ -25,7 +25,7 @@ public class RoleService {
         return session.createQuery("FROM Role").list();
     }
 
-    public  void updateRole(long roleId, String roleName) {
+    public  void updateRole(int roleId, String roleName) {
         Role role = session.get(Role.class, roleId);
         role.setRoleName(roleName);
         session.update(role);
@@ -39,7 +39,7 @@ public class RoleService {
         }
     }
 
-    public  void removeRole(long roleId){
+    public  void removeRole(int roleId){
         Role role = session.get(Role.class, roleId);
         session.delete(role);
     }

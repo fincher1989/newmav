@@ -43,8 +43,8 @@ public class Main {
 
         System.out.println("введите id");
         scanner = new Scanner(System.in);
-        if (scanner.hasNextLong()) {
-            user.setId(scanner.nextLong());
+        if (scanner.hasNextInt()) {
+            user.setId(scanner.nextInt());
             tooOk = true ;
         }
         else tooOk = false;
@@ -79,8 +79,8 @@ public class Main {
 
         System.out.println("введите id");
         scanner = new Scanner(System.in);
-        if (scanner.hasNextLong()) {
-            role.setId(scanner.nextLong());
+        if (scanner.hasNextInt()) {
+            role.setId(scanner.nextInt());
             tooOk = true ;
         }
         else tooOk = false;
@@ -92,6 +92,8 @@ public class Main {
             tooOk = true ;
         }
         else tooOk = false;
+
+        System.out.println(role.toString());
 
         if (tooOk) return role;
         else{
@@ -120,13 +122,14 @@ public class Main {
                         break;
                     case 5:
                         System.out.println("Удаление роли");
-                        printList(inService);
-                        System.out.print("введите id удаляемого: ");
-                        scanner = new Scanner(System.in);
-                        if (scanner.hasNextLong()) {
-                            inService.removeRole(scanner.nextLong());
-                            printList(inService);
-                        } else System.out.println("нет записи с таким id");
+                        if (printList(inService)) {
+                            System.out.print("введите id удаляемого: ");
+                            scanner = new Scanner(System.in);
+                            if (scanner.hasNextInt()) {
+                                inService.removeRole(scanner.nextInt());
+                                printList(inService);
+                            } else System.out.println("нет записи с таким id");
+                        }else System.out.println("В таблице нет записей");
                         break;
                     case 7:
                         System.out.println("Вввод новой роли");
@@ -134,7 +137,6 @@ public class Main {
                         scanner = new Scanner(System.in);
                         if (scanner.hasNextLine()) {
                             String roleName = scanner.nextLine();
-                            System.out.println(roleName);
                             inService.addRole(roleName);
                             printList(inService);
                         } else System.out.println("неверное имя");
@@ -169,13 +171,14 @@ public class Main {
                         break;
                     case 5:
                         System.out.println("Удаление пользователя");
-                        printList(inService);
-                        System.out.print("введите id удаляемого: ");
-                        scanner = new Scanner(System.in);
-                        if (scanner.hasNextLong()) {
-                            inService.removeUser(scanner.nextLong());
-                            printList(inService);
-                        } else System.out.println("нет записи с таким id");
+                        if (printList(inService)) {
+                            System.out.print("введите id удаляемого: ");
+                            scanner = new Scanner(System.in);
+                            if (scanner.hasNextInt()) {
+                                inService.removeUser(scanner.nextInt());
+                                printList(inService);
+                            } else System.out.println("нет записи с таким id");
+                        }else System.out.println("В таблице нет записей");
                         break;
                     case 7:
                         System.out.println("Вввод нового пользователя");
@@ -187,7 +190,7 @@ public class Main {
                             scanner = new Scanner(System.in);
                             if (scanner.hasNextLine()) {
                                 String userPasw = scanner.nextLine();
-                                inService.addUser(userName.substring(30), userPasw.substring(30));
+                                inService.addUser(userName, userPasw);
                                 printList(inService);
                             } else System.out.println("неверный пароль");
                         } else System.out.println("неверное имя");

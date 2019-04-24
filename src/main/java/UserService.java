@@ -25,7 +25,7 @@ public class UserService {
         return session.createQuery("FROM User").list();
     }
 
-    public  void updateUser(long userId, String userName, String userPasw) {
+    public  void updateUser(int userId, String userName, String userPasw) {
         User user = session.get(User.class, userId);
         user.setUserName(userName);
         user.setUserPasw(userPasw);
@@ -33,6 +33,7 @@ public class UserService {
     }
 
     public void updateUser(User user) {
+
         if (user != null) {
             User user1 = session.get(User.class, user.getId());
             user1.setUserName(user.getUserName());
@@ -41,7 +42,7 @@ public class UserService {
         }
     }
 
-    public  void removeUser(long userId){
+    public  void removeUser(int userId){
         User user = session.get(User.class, userId);
         session.delete(user);
     }
