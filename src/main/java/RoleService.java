@@ -15,6 +15,9 @@ public class RoleService {
         this.session = session;
     }
 
+    public Role getRole(int roleId){
+        return session.get(Role.class, roleId);
+    }
 
     public void addRole(String roleName) {
         Role role = new Role(roleName);

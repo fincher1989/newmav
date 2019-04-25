@@ -38,20 +38,10 @@ public class Role {
         this.roleName = roleName;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
     private Set<User> users;
-    public Set<User> getUsers(){
-        return users;
-    }
-    public void setUsers (Set<User> users){
-        this.users = users;
-    }
-    public void addUser (User user){
-        users.add(user);
-    }
 
     public Role (){}
-
     public Role(String roleName) {
         this.roleName = roleName ;
     }
@@ -62,7 +52,6 @@ public class Role {
         result = 31 * result + (roleName != null ? roleName.hashCode() : 0);
         return result ;
     }
-
     @Override
     public boolean equals (Object other){
         if (this == other) return true;

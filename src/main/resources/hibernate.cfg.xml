@@ -4,29 +4,56 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <!-- Имя класса Hibernate, которое позволяет Hibernate генерировать SQL, оптимизированный для конкретной реляционной базы данных. -->
         <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
+        <!-- -->
         <property name="hibernate.connection.driver_class">org.h2.Driver</property>
 
+        <!-- Квалифицирует неквалифицированные имена таблиц с данным каталогом в сгенерированном SQL. -->
+        <property name="hibernate.default_catalog">myDB</property>
+        <!-- Присвойте неквалифицированным именам таблиц заданную схему / табличное пространство в сгенерированном SQL. -->
+        <property name="hibernate.default_schema">USERS_DB</property>
+
+        <!-- -->
         <property name="hibernate.connection.url">jdbc:h2:C:/finch/idea/newmav/DB\myDB</property>
+        <!-- -->
         <property name="hibernate.connection.username">user_root</property>
+        <!-- -->
         <property name="hibernate.connection.password">505505</property>
 
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Запишите все операторы SQL на консоль. Это альтернатива установке категории журнала org.hibernate.SQL на debug. -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- Довольно распечатать SQL в журнале и консоли. -->
+        <property name="hibernate.format_sql">true</property>
+        <!-- Если включено, Hibernate будет генерировать комментарии внутри SQL, для упрощения отладки по умолчанию false. -->
+        <property name="hibernate.use_sql_comments">true</property>
 
-        <!--
-           <property name="hibernate.show_sql">true</property>
-           <property name="hibernate.format_sql">true</property>
-           <property name="hibernate.use_sql_comments">true</property>
+        <!-- Если включено, Hibernate будет собирать статистику, полезную для настройки производительности. -->
+        <property name="hibernate.generate_statistics">true</property>
 
-           <property name="hibernate.generate_statistics">true</property>
-          -->
-
+        <!-- Ненулевое значение определяет размер выборки JDBC (вызовов Statement.setFetchSize()). -->
         <property name="hibernate.jdbc.batch_size">50</property>
+
+        <!-- Ненулевое значение позволяет использовать пакетные обновления JDBC2 в Hibernate. -->
         <property name="hibernate.jdbc.fetch_size">50</property>
 
+        <!-- -->
         <property name="hibernate.order_inserts">true</property>
+
+        <!-- Заставляет Hibernate упорядочивать обновления SQL по значению первичного ключа обновляемых элементов.
+             Это приведет к уменьшению взаимных блокировок транзакций в системах с высокой степенью одновременности. -->
         <property name="hibernate.order_updates">true</property>
+
+        <!-- -->
         <property name="hibernate.jdbc.batch_versioned_data">true</property>
+
+        <!--
+
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+
+
+        -->
 
         <mapping class="Entity.User"/>
         <mapping class="Entity.Role"/>

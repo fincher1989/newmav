@@ -1,9 +1,11 @@
-
 import Entity.User;
+import Entity.Role;
 
 import org.hibernate.Session;
 
 import java.util.List;
+import java.util.Set;
+
 
 
 public class UserService {
@@ -15,9 +17,17 @@ public class UserService {
         this.session = session;
     }
 
+    public User getUser(int userId){
+        return session.get(User.class, userId);
+    }
 
     public void addUser(String userName, String userPass) {
         User user = new User(userName, userPass);
+        session.save(user);
+    }
+
+    public void addUser(String userName, String userPass, Set<Role> roles) {
+        User user = new User(userName, userPass, roles);
         session.save(user);
     }
 
@@ -45,5 +55,10 @@ public class UserService {
     public  void removeUser(int userId){
         User user = session.get(User.class, userId);
         session.delete(user);
+    }
+
+    public void setRole(User user, Set<Role> roles){
+        user.setRoles(roles);
+        session.update(user);
     }
 }

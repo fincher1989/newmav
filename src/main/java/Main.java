@@ -1,8 +1,11 @@
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+
+import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 
 import Entity.User;
@@ -23,7 +26,6 @@ public class Main {
         System.out.println("_______________________");
         return rez ;
     }
-
     private static boolean printList(RoleService roleService){
         boolean rez = false ;
         List roles = roleService.listRoles();
@@ -71,7 +73,6 @@ public class Main {
             return null ;
         }
     }
-
     private static Role getSysRole(){
         boolean tooOk ;
         Scanner scanner;
@@ -222,6 +223,34 @@ public class Main {
                     break;
                 case 2:
                     Tests(new RoleService(session));
+                    break;
+                case 3:
+                    UserService userService = new UserService(session);
+                    RoleService roleService = new RoleService(session);
+
+                    if (printList(userService)) {
+                        System.out.print("введите id пользователя: ");
+                        scanner = new Scanner(System.in);
+                        if (scanner.hasNextInt()) {
+                            int userId = scanner.nextInt();
+
+                            if (printList(roleService)) {
+                                System.out.print("введите id роли: ");
+                                scanner = new Scanner(System.in);
+                                if (scanner.hasNextInt()) {
+                                    int roleId = scanner.nextInt();
+
+                                    Set<Role> roles = new HashSet<Role>();
+                                    roles.add(roleService.getRole(roleId));
+                                    userService.addUser("саша","саша123",roles);
+                          //          userService.setRole(userService.getUser(userId), roles);
+
+                                } else System.out.println("нет записи с таким id");
+                            }
+
+                        } else System.out.println("нет записи с таким id");
+                    }
+
                     break;
                 case 0:
                     toExit = true ;
